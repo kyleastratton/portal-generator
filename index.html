@@ -6,13 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Generator</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="main-container">
 
         <div class="navbar">
-            <button class="accordion" id="accordion">Client Initiated</button>
+            <button class="accordion" id="accordion1">MISCELLANEOUS</button>
+            <div class="panel">
+                <nav>
+                    <ul>
+                        <li><a class="tablinks" onclick="openTab(event, 'miscellaneous')">General</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+            <button class="accordion" id="accordion2">CLIENT INITIATED</button>
             <div class="panel">
                 <nav>
                     <ul>
@@ -38,7 +50,74 @@
 
         <div class="content">
 
-            <div id="clientPayment" class="tabcontent">
+          <div id="miscellaneous" class="tabcontent">
+
+              <div class="sub-container">
+
+                <div class="container">
+                  <p class="container-heading">Password</p>
+                  <div>
+                      <input
+                      class="textarea"
+                      type="text"
+                      id="password"
+                      value="R4ND0M-Pa55W0rD"
+                      onclick="copyToClipboard('password')"
+                      />
+                      <br /><br />
+                      <button class="button-primary" onclick="generatePassword()">
+                      Generate
+                      </button>
+                  </div>
+                </div>
+
+                <div class="container">
+                  <p class="container-heading" id="heading">Number</p>
+                  <div>
+                      <input class="textarea" type="text" id="number" value="0" onclick="copyToClipboard('number')" />
+                      <br /><br />
+                      <button
+                      class="button-primary"
+                      onclick="generateRandomNumber('number')"
+                      >
+                      Generate
+                      </button>
+                  </div>
+                </div>
+
+                <div class="container">
+                  <p class="container-heading" id="heading">Mobile Number</p>
+                  <div>
+                      <input class="textarea" type="text" id="mobile" value="0" onclick="copyToClipboard('mobile')" />
+                      <br /><br />
+                      <button
+                      class="button-primary"
+                      onclick="generateMobile()"
+                      >
+                      Generate
+                      </button>
+                  </div>
+                </div>
+
+                <div class="container">
+                  <p class="container-heading" id="heading">Address</p>
+                  <div>
+                      <input class="textarea" type="text" id="address" value="0" onclick="copyToClipboard('address')" />
+                      <br /><br />
+                      <button
+                      class="button-primary"
+                      onclick="generateAddress()"
+                      >
+                      Generate
+                      </button>
+                  </div>
+                </div>
+
+              </div>
+
+          </div>
+
+          <div id="clientPayment" class="tabcontent">
 
                 <div class="sub-container">
                     <div class="container">
@@ -177,9 +256,9 @@
 
                 </div>
 
-            </div>
+          </div>
 
-            <div id="clientReceipt" class="tabcontent">
+          <div id="clientReceipt" class="tabcontent">
 
                 <div class="sub-container">
                     <div class="container">
@@ -267,125 +346,72 @@
                 </div>
                 </div>
 
-            </div>
+          </div>
 
-            <div id="transfer" class="tabcontent">
+          <div id="transfer" class="tabcontent">
                 <div class="sub-container">
       
-                    <div class="container" id="container1">
+                    <div class="container" id="container-transfer-name">
                       <p class="container-heading" id="heading1">Name</p>
                       <div>
                         <input
                           class="textarea"
                           type="text"
-                          id="transferName1"
+                          id="transferName"
                           value="John Doe"
-                          onclick="copyToClipboard('transferName1')"
+                          onclick="copyToClipboard('transferName')"
                         />
                         <br /><br />
-                        <button class="button-primary" onclick="generateName('transferName1')">
+                        <button class="button-primary" onclick="generateName('transferName')">
                           Generate
                         </button>
                       </div>
                     </div>
       
-                    <div class="container" id="container1">
+                    <div class="container" id="container-transfer-matternumber">
                       <p class="container-heading" id="heading1">Matter Number</p>
                       <div>
                         <input
                           class="textarea"
                           type="text"
-                          id="transferMatterNumber1"
+                          id="transferMatterNumber"
                           value="DOE01-01"
-                          onclick="copyToClipboard('transferMatterNumber1')"
+                          onclick="copyToClipboard('transferMatterNumber')"
                         />
                         <br /><br />
-                        <button class="button-primary" onclick="generateMatterNumber('transferMatterNumber1', 'transferName1')">
+                        <button class="button-primary" 
+                        onclick="generateMatterNumber('transferMatterNumber', 'transferName')">
                           Generate
                         </button>
                       </div>
                     </div>
       
       
-                    <div class="container" id="container2">
+                    <div class="container" id="container-transfer-description">
                       <p class="container-heading" id="heading2">Description</p>
                       <div>
                         <input
                           class="textarea"
                           type="text"
-                          id="transferDescription1"
+                          id="transferDescription"
                           value="General"
-                          onclick="copyToClipboard('transferDescription1')"
+                          onclick="copyToClipboard('transferDescription')"
                         />
                         <br /><br />
-                        <button class="button-primary" onclick="generateWorkType('transferDescription1')">
+                        <button class="button-primary" onclick="generateWorkType('transferDescription')">
                           Generate
                         </button>
                       </div>
                     </div>
       
-                    <hr>
-      
-                    <div class="container" id="container1">
-                      <p class="container-heading" id="heading1">Name</p>
-                      <div>
-                        <input
-                          class="textarea"
-                          type="text"
-                          id="transferName2"
-                          value="John Doe"
-                          onclick="copyToClipboard('transferName2')"
-                        />
-                        <br /><br />
-                        <button class="button-primary" onclick="generateName('transferName2')">
-                          Generate
-                        </button>
-                      </div>
-                    </div>
-      
-                    <div class="container" id="container1">
-                      <p class="container-heading" id="heading1">Matter Number</p>
-                      <div>
-                        <input
-                          class="textarea"
-                          type="text"
-                          id="transferMatterNumber2"
-                          value="DOE01-01"
-                          onclick="copyToClipboard('transferMatterNumber2')"
-                        />
-                        <br /><br />
-                        <button class="button-primary" onclick="generateMatterNumber('transferMatterNumber2', 'transferName2')">
-                          Generate
-                        </button>
-                      </div>
-                    </div>
-      
-      
-                    <div class="container" id="container2">
-                      <p class="container-heading" id="heading2">Description</p>
-                      <div>
-                        <input
-                          class="textarea"
-                          type="text"
-                          id="transferDescription2"
-                          value="General"
-                          onclick="copyToClipboard('transferDescription2')"
-                        />
-                        <br /><br />
-                        <button class="button-primary" onclick="generateWorkType('transferDescription2')">
-                          Generate
-                      </div>
-                    </div>
-      
-                    <div class="container" id="container9">
+                    <div class="container" id="container-transfer-amount">
                       <p class="container-heading" id="heading7">Amount</p>
                       <div>
-                        <input class="textarea" type="text" id="transferAmount" value="-" />
+                        <input class="textarea" type="text" id="transferAmount" value="123.45" onclick="copyToClipboard('transferAmount')" />
                         <br /><br />
                         <button
                           class="button-primary"
                           onclick="generateRandomNumber('transferAmount')"
-                          onclick="copyToClipboard('transferAmount')"
                         >
                           Generate
                         </button>
@@ -393,9 +419,9 @@
                     </div>
       
                 </div>
-            </div>
+          </div>
 
-            <div id="thirdPartyCheque" class="tabcontent">
+          <div id="thirdPartyCheque" class="tabcontent">
                 <div class="sub-container">
       
                     <div class="container" id="container1">
@@ -482,7 +508,7 @@
                     </div>
       
                 </div>
-            </div>
+          </div>
 
         </div>
 

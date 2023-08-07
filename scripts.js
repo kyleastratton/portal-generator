@@ -1710,9 +1710,11 @@ function generateMatterNumber(selectorId, nameId) {
   let name = document.getElementById(nameId).value;
   let splitName = name.split(" ");
   let surname = splitName[1];
+  let clientNumber = getRandomInt(99);
+  let fileNumber = getRandomInt(99);
   let result = surname.substring(0, 3);
   let result1 = result.toUpperCase();
-  let result2 = result1 + "01" + "-" + "01";
+  let result2 = result1 + clientNumber + "-" + fileNumber;
   document.getElementById(selectorId).value = result2;
 }
 
@@ -1796,43 +1798,45 @@ function assignApplePass() {
 
 //! Address Generator
 
-const streetPrefix = [
-  "Oak",
-  "Birch",
-  "Willow",
-  "Beech",
-  "Spruce",
-  "Walnut",
-  "Cherry",
-  "Maple",
-  "Alder",
-  "Ash",
-  "Aspen",
-  "Cedar",
-  "Elm",
-  "Hawthorn",
-  "Hemlock",
-  "Hornbeam",
-  "Juniper",
-  "Lime",
-  "Pine",
-  "Sycamore",
-  "Whitebeam",
-  "Yew",
-  "High",
-  "Church",
-  "Park",
-  "Main",
-  "Queens",
-  "Kings",
-  "Grange",
-  "New",
-  "Mill",
-  "North",
-  "East",
-  "South",
-  "West",
-];
+function generateStreetPrefix() {
+  let streetPrefix = [
+    "Oak",
+    "Birch",
+    "Willow",
+    "Beech",
+    "Spruce",
+    "Walnut",
+    "Cherry",
+    "Maple",
+    "Alder",
+    "Ash",
+    "Aspen",
+    "Cedar",
+    "Elm",
+    "Hawthorn",
+    "Hemlock",
+    "Hornbeam",
+    "Juniper",
+    "Lime",
+    "Pine",
+    "Sycamore",
+    "Whitebeam",
+    "Yew",
+    "High",
+    "Church",
+    "Park",
+    "Main",
+    "Queens",
+    "Kings",
+    "Grange",
+    "New",
+    "Mill",
+    "North",
+    "East",
+    "South",
+    "West",
+  ];
+}
 
 const streetName = [
   "Road",
@@ -2034,6 +2038,7 @@ const town = [
 ];
 
 function getStreetPrefix() {
+  generateStreetPrefix();
   return Math.floor(Math.random() * streetPrefix.length);
 }
 
@@ -2094,8 +2099,8 @@ function generatePaymentType(selectorId) {
 //! Mobile Number Generator
 
 function generateMobile() {
-  const mobileNumber = "07" + generateNumber(9);
-  document.getElementById("mobileNumber").value = mobileNumber;
+  const mobileNumber = "0770 090 0" + generateNumber(3);
+  document.getElementById("mobile").value = mobileNumber;
 }
 
 //! Generate sort code
@@ -2610,6 +2615,26 @@ function uuidv4() {
 function generateUUID() {
   generatedUUID = uuidv4();
   document.getElementById("uuid").value = generatedUUID;
+}
+
+function generateMixed(length) {
+  var result = "";
+  var characters = "ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789";
+  var charactersLength = characters.length;
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
+}
+
+// ! Password Generator
+
+function generatePassword() {
+  const password1 = generateMixed(5);
+  const password2 = generateMixed(5);
+  const password3 = generateMixed(5);
+  const applePass = password1 + "-" + password2 + "-" + password3;
+  document.getElementById("password").value = applePass;
 }
 
 // ! Landlines
