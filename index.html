@@ -20,7 +20,6 @@
                 <nav>
                     <ul>
                         <li><a class="tablinks" onclick="openTab(event, 'miscellaneous')">General</a></li>
-
                     </ul>
                 </nav>
             </div>
@@ -107,6 +106,62 @@
                       <button
                       class="button-primary"
                       onclick="generateAddress()"
+                      >
+                      Generate
+                      </button>
+                  </div>
+                </div>
+
+                <div class="container">
+                  <p class="container-heading" id="heading">Word</p>
+                  <div>
+                      <input class="textarea" type="text" id="word" value="word" onclick="copyToClipboard('word')" />
+                      <br /><br />
+                      <button
+                      class="button-primary"
+                      onclick="generateWord()"
+                      >
+                      Generate
+                      </button>
+                  </div>
+                </div>
+
+                <div class="container">
+                  <p class="container-heading" id="heading">Noun</p>
+                  <div>
+                      <input class="textarea" type="text" id="noun" value="noun" onclick="copyToClipboard('noun')" />
+                      <br /><br />
+                      <button
+                      class="button-primary"
+                      onclick="generateNoun()"
+                      >
+                      Generate
+                      </button>
+                  </div>
+                </div>
+
+                <div class="container">
+                  <p class="container-heading" id="heading">Verb</p>
+                  <div>
+                      <input class="textarea" type="text" id="verb" value="verb" onclick="copyToClipboard('verb')" />
+                      <br /><br />
+                      <button
+                      class="button-primary"
+                      onclick="generateVerb()"
+                      >
+                      Generate
+                      </button>
+                  </div>
+                </div>
+
+                <div class="container">
+                  <p class="container-heading" id="heading">Adjective</p>
+                  <div>
+                      <input class="textarea" type="text" id="adjective" value="adjective" onclick="copyToClipboard('adjective')" />
+                      <br /><br />
+                      <button
+                      class="button-primary"
+                      onclick="generateAdjective()"
                       >
                       Generate
                       </button>
@@ -514,5 +569,6 @@
 
     </div>
     <script src="scripts.js"></script>
+    <script src="words.js"></script>
 </body>
 </html>

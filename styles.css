@@ -1,10 +1,16 @@
+:root{
+  --primary: #1c2124;
+  --secondary: #282d30;
+  --button-primary: #6f86fa;
+}
+
 body {
     /* font-family: 'Roboto', sans-serif; */
     /* font-family: 'Lexend Deca', sans-serif; */
     font-family: 'Chakra Petch', sans-serif;
     height: 100vw;
     overflow: hidden;
-    background-color: #28323e;
+    background-color: var(--primary);
 }
 
 .main-content {
@@ -17,7 +23,7 @@ body {
 
 .navbar {
     width: 12%;
-    background-color: #313d4b;
+    background-color: var(--secondary);
     margin: -10px 0px 0px -10px;
     height: 100vw;
     padding-top: 20px;
@@ -55,7 +61,7 @@ li>.tablinks.active {
 /* ! Containers  */
 
 .container {
-  background-color: #202932;
+  background-color: var(--secondary);
   color: #fff;
   border-radius: 0.4rem;
   padding: 1%;
@@ -108,9 +114,9 @@ input {
 
 .button-primary {
   /* background-color: #2d353c; */
-  background-color: #50A05b;
+  background-color: var(--button-primary);
   /* border: 1px solid #2d353c; */
-  border: 1px solid #50a05b;
+  border: 1px solid var(--secondary);
   border-radius: 0.25rem;
   color: #f1f1f1;
   padding: 6px 14px;
@@ -180,7 +186,7 @@ input {
 }
 
 .accordion {
-    background-color: #313d4b;
+    background-color: var(--secondary);
     color: #ffffff;
     cursor: pointer;
     padding: 18px;
@@ -197,7 +203,7 @@ input {
   .panel {
     /* padding: 0 18px; */
     display: none;
-    background-color: #313d4b;
+    background-color: var(--secondary);
     overflow: hidden;
   }
 
