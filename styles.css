@@ -1,13 +1,13 @@
 :root{
-  --primary: #1c2124;
-  --secondary: #282d30;
+  --primary: #222a31;
+  --secondary: #2c3640;
   --button-primary: #6f86fa;
+  --font: 'Chakra Petch', sans-serif;
+  /* --font: 'Iosevka Web'; */
 }
 
 body {
-    /* font-family: 'Roboto', sans-serif; */
-    /* font-family: 'Lexend Deca', sans-serif; */
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: var(--font);
     height: 100vw;
     overflow: hidden;
     background-color: var(--primary);
@@ -55,7 +55,7 @@ li {
 
 li>.tablinks.active {
   color: #fff;
-  font-family: 'Chakra Petch', sans-serif;
+  font-family: var(--font)
 }
 
 /* ! Containers  */
@@ -70,7 +70,6 @@ li>.tablinks.active {
   height: fit-content;
   width: 20%;
   min-width: 200px;
-  /*box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);*/
 }
 
 /* .large-container {
@@ -97,9 +96,7 @@ input {
   padding: 2px;
   background-color: #f1f1f1;
   color: #333;
-  /* font-family: sans-serif; */
-  font-family: 'Chakra Petch', sans-serif;
-  /* line-height: 1.5; */
+  font-family: var(--font);
   width: 350px;
   max-width: 80%;
   border: none;
@@ -113,9 +110,7 @@ input {
 /* ! Buttons */
 
 .button-primary {
-  /* background-color: #2d353c; */
   background-color: var(--button-primary);
-  /* border: 1px solid #2d353c; */
   border: 1px solid var(--secondary);
   border-radius: 0.25rem;
   color: #f1f1f1;
@@ -123,7 +118,6 @@ input {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  /* font-family: sans-serif; */
   font-family: 'Chakra Petch', sans-serif;
   font-style: normal;
   font-size: 12px;
@@ -134,7 +128,6 @@ input {
 .button-primary:active {
   background-color: #f1f1f1;
   color: #2d353c;
-  /* border: 1px solid #2d353c; */
   border: 1px solid #50a05b;
 }
 
@@ -147,7 +140,6 @@ input {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  /* font-family: sans-serif; */
   font-style: normal;
   font-size: 12px;
   margin: 4px;
@@ -197,11 +189,10 @@ input {
     font-size: 15px;
     transition: 0.4s;
     font-weight: bold;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: var(--font);
   }
   
   .panel {
-    /* padding: 0 18px; */
     display: none;
     background-color: var(--secondary);
     overflow: hidden;

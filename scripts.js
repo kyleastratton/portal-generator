@@ -1711,7 +1711,13 @@ function generateMatterNumber(selectorId, nameId) {
   let splitName = name.split(" ");
   let surname = splitName[1];
   let clientNumber = getRandomInt(99);
+  if (clientNumber < 10){
+    clientNumber = clientNumber.toString().padStart(2, '0')
+  }
   let fileNumber = getRandomInt(99);
+  if (fileNumber < 10) {
+    fileNumber = fileNumber.toString().padStart(2, '0')
+  }
   let result = surname.substring(0, 3);
   let result1 = result.toUpperCase();
   let result2 = result1 + clientNumber + "-" + fileNumber;
