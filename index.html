@@ -24,7 +24,7 @@
             <div class="panel">
                 <nav>
                     <ul>
-                        <li><a class="tablinks" onclick="openTab(event, 'miscellaneous')">General</a></li>
+                        <li><a class="tablinks" onclick="openTab(event, 'miscellaneous')" id="defaultOpen">General</a></li>
                     </ul>
                 </nav>
             </div>
@@ -32,7 +32,7 @@
             <div class="panel">
                 <nav>
                     <ul>
-                        <li><a class="tablinks" onclick="openTab(event, 'clientPayment')" id="defaultOpen">Client Payment</a></li>
+                        <li><a class="tablinks" onclick="openTab(event, 'clientPayment')">Client Payment</a></li>
                         <li><a class="tablinks" onclick="openTab(event, 'clientReceipt')">Client Receipt</a></li>
                         <li><a class="tablinks" onclick="openTab(event, 'transfer')">Transfer</a></li>
                         <li><a class="tablinks" onclick="openTab(event, 'thirdPartyCheque')">Third Party Cheque</a></li>
@@ -90,6 +90,23 @@
                 </div>
 
                 <div class="container">
+                  <p class="container-heading" id="heading1">Name</p>
+                  <div>
+                      <input
+                      class="textarea"
+                      type="text"
+                      id="clientPaymentName"
+                      value="John Doe"
+                      onclick="copyToClipboard('clientPaymentName')"
+                      />
+                      <br /><br />
+                      <button class="button-primary" onclick="generateName('clientPaymentName')">
+                      Generate
+                      </button>
+                  </div>
+                </div>
+
+                <div class="container">
                   <p class="container-heading" id="heading">Mobile Number</p>
                   <div>
                       <input class="textarea" type="text" id="mobile" value="0" onclick="copyToClipboard('mobile')" />
@@ -116,6 +133,43 @@
                       </button>
                   </div>
                 </div>
+
+                <div class="container">
+                  <p class="container-heading" id="heading9">Sort Code</p>
+                  <div>
+                      <input
+                      class="textarea"
+                      type="text"
+                      id="sortCode"
+                      value="00-00-00"
+                      onclick="copyToClipboard('sortCode')"
+                      />
+                      <br /><br />
+                      <button class="button-primary" onclick="generateSortCode()">
+                      Generate
+                      </button>
+                  </div>
+              </div>
+
+              <div class="container">
+                  <p class="container-heading" id="heading8">Account Number</p>
+                  <div>
+                      <input
+                      class="textarea"
+                      type="text"
+                      id="accountNumber"
+                      value="0000 0000"
+                      onclick="copyToClipboard('accountNumber')"
+                      />
+                      <br /><br />
+                      <button
+                      class="button-primary"
+                      onclick="generateAccountNumber()"
+                      >
+                      Generate
+                      </button>
+                  </div>
+              </div>
 
                 <div class="container">
                   <p class="container-heading" id="heading">Word</p>
@@ -179,8 +233,8 @@
 
           <div id="clientPayment" class="tabcontent">
 
-                <div class="sub-container">
-                    <div class="container">
+              <div class="sub-container">
+                <div class="container">
                     <p class="container-heading" id="heading1">Name</p>
                     <div>
                         <input
@@ -314,7 +368,7 @@
                     </div>
                 </div>
 
-                </div>
+              </div>
 
           </div>
 
