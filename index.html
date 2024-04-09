@@ -26,6 +26,9 @@
                     <ul>
                         <li><a class="tablinks" onclick="openTab(event, 'miscellaneous')" id="defaultOpen">General</a></li>
                     </ul>
+                    <ul>
+                      <li><a class="tablinks" onclick="openTab(event, 'custom')" id="defaultOpen">Custom</a></li>
+                  </ul>
                 </nav>
             </div>
             <button class="accordion" id="accordion2">CLIENT INITIATED</button>
@@ -95,12 +98,12 @@
                       <input
                       class="textarea"
                       type="text"
-                      id="clientPaymentName"
-                      value="John Doe"
-                      onclick="copyToClipboard('clientPaymentName')"
+                      id="personName"
+                      value="John Smith"
+                      onclick="copyToClipboard('personName')"
                       />
                       <br /><br />
-                      <button class="button-primary" onclick="generateName('clientPaymentName')">
+                      <button class="button-primary" onclick="generateName('personName')">
                       Generate
                       </button>
                   </div>
@@ -231,6 +234,25 @@
 
           </div>
 
+          <div id="custom" class="tabcontent">
+            <div class="container">
+              <p class="container-heading" id="heading1">Name</p>
+              <div>
+                  <input
+                  class="textarea"
+                  type="text"
+                  id="customName"
+                  value="John Smith"
+                  onclick="copyToClipboard('customName')"
+                  />
+                  <br /><br />
+                  <button class="button-primary" onclick="generateName('customName')">
+                  Generate
+                  </button>
+              </div>
+            </div>
+          </div>
+
           <div id="clientPayment" class="tabcontent">
 
               <div class="sub-container">
@@ -241,7 +263,7 @@
                         class="textarea"
                         type="text"
                         id="clientPaymentName"
-                        value="John Doe"
+                        value="John Smith"
                         onclick="copyToClipboard('clientPaymentName')"
                         />
                         <br /><br />
@@ -258,7 +280,7 @@
                         class="textarea"
                         type="text"
                         id="clientPaymentMatterNumber"
-                        value="DOE01-01"
+                        value="Smith01-01"
                         onclick="copyToClipboard('clientPaymentMatterNumber')"
                         />
                         <br /><br />
@@ -382,7 +404,7 @@
                             class="textarea"
                             type="text"
                             id="clientReceiptName"
-                            value="John Doe"
+                            value="John Smith"
                             onclick="copyToClipboard('clientReceiptName')"
                         />
                         <br /><br />
@@ -399,7 +421,7 @@
                             class="textarea"
                             type="text"
                             id="clientReceiptMatterNumber"
-                            value="DOE01-01"
+                            value="Smith01-01"
                             onclick="copyToClipboard('clientReceiptMatterNumber')"
                         />
                         <br /><br />
@@ -472,7 +494,7 @@
                           class="textarea"
                           type="text"
                           id="transferName"
-                          value="John Doe"
+                          value="John Smith"
                           onclick="copyToClipboard('transferName')"
                         />
                         <br /><br />
@@ -489,7 +511,7 @@
                           class="textarea"
                           type="text"
                           id="transferMatterNumber"
-                          value="DOE01-01"
+                          value="Smith01-01"
                           onclick="copyToClipboard('transferMatterNumber')"
                         />
                         <br /><br />
@@ -545,7 +567,7 @@
                           class="textarea"
                           type="text"
                           id="thirdPartyChequeName"
-                          value="John Doe"
+                          value="John Smith"
                           onclick="copyToClipboard('thirdPartyChequeName')"
                         />
                         <br /><br />
@@ -562,7 +584,7 @@
                           class="textarea"
                           type="text"
                           id="thirdPartyChequeMatterNumber"
-                          value="DOE01-01"
+                          value="Smith01-01"
                           onclick="copyToClipboard('thirdPartyChequeMatterNumber')"
                         />
                         <br /><br />
