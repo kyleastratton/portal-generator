@@ -62,6 +62,23 @@
               <div class="sub-container">
 
                 <div class="container">
+                  <p class="container-heading" id="heading1">Name</p>
+                  <div>
+                      <input
+                      class="textarea"
+                      type="text"
+                      id="personName"
+                      value="John Smith"
+                      onclick="copyToClipboard('personName')"
+                      />
+                      <br /><br />
+                      <button class="button-primary" onclick="generateName('personName')">
+                      Generate
+                      </button>
+                  </div>
+                </div>
+
+                <div class="container">
                   <p class="container-heading">Password</p>
                   <div>
                       <input
@@ -87,23 +104,6 @@
                       class="button-primary"
                       onclick="generateRandomNumber('number')"
                       >
-                      Generate
-                      </button>
-                  </div>
-                </div>
-
-                <div class="container">
-                  <p class="container-heading" id="heading1">Name</p>
-                  <div>
-                      <input
-                      class="textarea"
-                      type="text"
-                      id="personName"
-                      value="John Smith"
-                      onclick="copyToClipboard('personName')"
-                      />
-                      <br /><br />
-                      <button class="button-primary" onclick="generateName('personName')">
                       Generate
                       </button>
                   </div>
