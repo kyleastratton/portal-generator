@@ -33,7 +33,8 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
-document.getElementById("accordion").click();
+document.getElementById("accordion1").click();
+document.getElementById("accordion2").click();
 
 // ! Generator
 
