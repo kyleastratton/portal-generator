@@ -280,7 +280,7 @@
                         class="textarea"
                         type="text"
                         id="clientPaymentMatterNumber"
-                        value="Smith01-01"
+                        value="SMI01-01"
                         onclick="copyToClipboard('clientPaymentMatterNumber')"
                         />
                         <br /><br />
@@ -421,7 +421,7 @@
                             class="textarea"
                             type="text"
                             id="clientReceiptMatterNumber"
-                            value="Smith01-01"
+                            value="SMI01-01"
                             onclick="copyToClipboard('clientReceiptMatterNumber')"
                         />
                         <br /><br />
@@ -511,7 +511,7 @@
                           class="textarea"
                           type="text"
                           id="transferMatterNumber"
-                          value="Smith01-01"
+                          value="SMI01-01"
                           onclick="copyToClipboard('transferMatterNumber')"
                         />
                         <br /><br />
@@ -584,7 +584,7 @@
                           class="textarea"
                           type="text"
                           id="thirdPartyChequeMatterNumber"
-                          value="Smith01-01"
+                          value="SMI01-01"
                           onclick="copyToClipboard('thirdPartyChequeMatterNumber')"
                         />
                         <br /><br />
@@ -645,6 +645,78 @@
       
                 </div>
           </div>
+
+          <div id="writeOff" class="tabcontent">
+            <div class="sub-container">
+  
+                <div class="container" id="container1">
+                  <p class="container-heading" id="heading1">Name</p>
+                  <div>
+                    <input
+                      class="textarea"
+                      type="text"
+                      id="writeOffName"
+                      value="John Smith"
+                      onclick="copyToClipboard('writeOffName')"
+                    />
+                    <br /><br />
+                    <button class="button-primary" onclick="generateName('writeOffName')">
+                      Generate
+                    </button>
+                  </div>
+                </div>
+  
+                <div class="container" id="container1">
+                  <p class="container-heading" id="heading1">Matter Number</p>
+                  <div>
+                    <input
+                      class="textarea"
+                      type="text"
+                      id="writeOffMatterNumber"
+                      value="SMI01-01"
+                      onclick="copyToClipboard('writeOffMatterNumber')"
+                    />
+                    <br /><br />
+                    <button class="button-primary" onclick="generateMatterNumber('writeOffMatterNumber', 'writeOffName')">
+                      Generate
+                    </button>
+                  </div>
+                </div>
+  
+  
+                <div class="container" id="container2">
+                  <p class="container-heading" id="heading2">Description</p>
+                  <div>
+                    <input
+                      class="textarea"
+                      type="text"
+                      id="writeOffDescription"
+                      value="General"
+                      onclick="copyToClipboard('writeOffDescription')"
+                    />
+                    <br /><br />
+                    <button class="button-primary" onclick="generateWorkType('writeOffDescription')">
+                      Generate
+                  </div>
+                </div>
+  
+                <div class="container" id="container9">
+                  <p class="container-heading" id="heading7">Amount</p>
+                  <div>
+                    <input class="textarea" type="text" id="writeOffAmount" value="-" />
+                    <br /><br />
+                    <button
+                      class="button-primary"
+                      onclick="generateRandomNumber('writeOffAmount')"
+                      onclick="copyToClipboard('writeOffAmount')"
+                    >
+                      Generate
+                    </button>
+                  </div>
+                </div>
+  
+            </div>
+      </div>
 
         </div>
 
