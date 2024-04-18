@@ -79,6 +79,23 @@
                 </div>
 
                 <div class="container">
+                  <p class="container-heading" id="heading1">Matter Number</p>
+                  <div>
+                      <input
+                      class="textarea"
+                      type="text"
+                      id="generalMatterNumber"
+                      value="SMI01-01"
+                      onclick="copyToClipboard('generalMatterNumber')"
+                      />
+                      <br /><br />
+                      <button class="button-primary" onclick="generateMatterNumber('generalMatterNumber', 'personName')">
+                      Generate
+                      </button>
+                  </div>
+              </div>
+
+                <div class="container">
                   <p class="container-heading">Password</p>
                   <div>
                       <input
