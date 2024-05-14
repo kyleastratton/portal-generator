@@ -1658,7 +1658,7 @@ function generateWorkType(selectorId) {
     "Commercial Transfer",
     "Planning & Development",
     "Refinance",
-    " Buy to Let",
+    "Buy to Let",
     "New Build Purchase",
     "New Build Sale",
     "Purchase",
