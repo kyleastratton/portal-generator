@@ -1746,7 +1746,7 @@ function generateUUID() {
 
 function generateMixed(length) {
   var result = "";
-  var characters = "ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789";
+  var characters = "ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz0123456789";
   var charactersLength = characters.length;
   for (var i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
@@ -1887,10 +1887,7 @@ function closeSubmenu(e) {
 //   }
 // }
 
-// console.log(maleNames.find((el) => el.length > 3));
-// console.log(surname.find((el) => el.length > 4));
-
-// console.log(maleNames.filter(maleNames => maleNames.length > 3))
+// custom length name functions
 
 let maleNames1 = maleNames.filter((maleNames) => maleNames.length > 2);
 let maleNames2 = maleNames1.filter((maleNames1) => maleNames1.length < 4);
