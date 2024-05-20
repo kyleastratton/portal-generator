@@ -158,12 +158,12 @@
                       <input
                       class="textarea"
                       type="text"
-                      id="sortCode"
+                      id="clientPaymentSortCode"
                       value="00-00-00"
-                      onclick="copyToClipboard('sortCode')"
+                      onclick="copyToClipboard('clientPaymentSortCode')"
                       />
                       <br /><br />
-                      <button class="button-primary" onclick="generateSortCode()">
+                      <button class="button-primary" onclick="generateSortCode('clientPaymentSortCode')">
                       Generate
                       </button>
                   </div>
@@ -175,14 +175,14 @@
                       <input
                       class="textarea"
                       type="text"
-                      id="accountNumber"
+                      id="clientPaymentAccountNumber"
                       value="0000 0000"
-                      onclick="copyToClipboard('accountNumber')"
+                      onclick="copyToClipboard('clientPaymentAccountNumber')"
                       />
                       <br /><br />
                       <button
                       class="button-primary"
-                      onclick="generateAccountNumber()"
+                      onclick="generateAccountNumber('clientPaymentAccountNumber')"
                       >
                       Generate
                       </button>
@@ -379,7 +379,7 @@
                         onclick="copyToClipboard('sortCode')"
                         />
                         <br /><br />
-                        <button class="button-primary" onclick="generateSortCode()">
+                        <button class="button-primary" onclick="generateSortCode('sortCode')">
                         Generate
                         </button>
                     </div>
@@ -398,7 +398,7 @@
                         <br /><br />
                         <button
                         class="button-primary"
-                        onclick="generateAccountNumber()"
+                        onclick="generateAccountNumber('accountNumber')"
                         >
                         Generate
                         </button>

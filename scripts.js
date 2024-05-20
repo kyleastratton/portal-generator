@@ -1243,18 +1243,18 @@ function formatSortCode(str) {
 
 formatSortCode(123456789);
 
-function generateSortCode() {
+function generateSortCode(id) {
   let sortcode2 = generateNumber(6);
   let sortcode3 = formatSortCode(sortcode2);
-  document.getElementById("sortCode").value = sortcode3;
+  document.getElementById(id).value = sortcode3;
 }
 
 //! Generate account number
 
-function generateAccountNumber() {
+function generateAccountNumber(id) {
   const accountnumber1 = generateNumber(4);
   const accountnumber2 = generateNumber(4);
-  document.getElementById("accountNumber").value =
+  document.getElementById(id).value =
     accountnumber1 + " " + accountnumber2;
 }
 
