@@ -30,6 +30,7 @@ body {
     height: 100vw;
     padding-top: 20px;
     float: left;
+  	min-width: fit-content;
 }
 
 .content {
@@ -207,5 +208,3 @@ input {
     float: right;
     margin-left: 5px;
   }
-  
-  
