@@ -31,6 +31,7 @@ body {
     padding-top: 20px;
     float: left;
   	min-width: fit-content;
+    padding: 0.5rem;
 }
 
 .content {
