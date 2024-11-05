@@ -1,743 +1,263 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Generator</title>
-    <link rel="stylesheet" href="styles.css" />
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="./favicon/site.webmanifest">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="main-container">
 
-        <div class="navbar">
-            <button class="accordion" id="accordion1">MISCELLANEOUS</button>
-            <div class="panel">
-                <nav>
-                    <ul>
-                        <li><a class="tablinks" onclick="openTab(event, 'miscellaneous')" id="defaultOpen">General</a></li>
-                        <li><a class="tablinks" onclick="openTab(event, 'custom')">Custom</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <button class="accordion" id="accordion2">CLIENT INITIATED</button>
-            <div class="panel">
-                <nav>
-                    <ul>
-                        <li><a class="tablinks" onclick="openTab(event, 'clientPayment')">Client Payment</a></li>
-                        <li><a class="tablinks" onclick="openTab(event, 'clientReceipt')">Client Receipt</a></li>
-                        <li><a class="tablinks" onclick="openTab(event, 'transfer')">Transfer</a></li>
-                        <li><a class="tablinks" onclick="openTab(event, 'thirdPartyCheque')">Third Party Cheque</a></li>
-                        <li><a class="tablinks" onclick="openTab(event, 'writeOff')">Write Off</a></li>
-                        <li><a class="tablinks" onclick="openTab(event, 'internationalTransfer')">International Transfer</a></li>
-                        <li><a class="tablinks" onclick="openTab(event, 'firmPayment')">Firm Payment</a></li>
-                        <li><a class="tablinks" onclick="openTab(event, 'firmReceipt')">Firm Receipt</a></li>
-                        <li><a class="tablinks" onclick="openTab(event, 'clientPurchaseLedger')">Client Purchase Ledger</a></li>
-                        <li><a class="tablinks" onclick="openTab(event, 'firmPurchaseLedger')">Firm Purchase Ledger</a></li>
-                        <li><a class="tablinks" onclick="openTab(event, 'antiMoneyLaundering')">Anti Money Laundering</a></li>
-                        <li><a class="tablinks" onclick="openTab(event, 'feeNote')">Fee Note</a></li>
-                        <li><a class="tablinks" onclick="openTab(event, 'expenses')">Expense</a></li>
-                        <li><a class="tablinks" onclick="openTab(event, 'wipWriteOff')">WIP Write Off</a></li>
-                        <li><a class="tablinks" onclick="openTab(event, 'generalQuery')">General Query</a></li>
-                    </ul>
-                </nav>
-            </div>
+<div class="topnav" id="myTopnav">
+  <a href="#home" class="active">All</a>
+  <a href="#news">Matter</a>
+  <a href="#contact">Person</a>
+  <a href="#about">Miscellaneous</a>
+  <a href="javascript:void(0);" class="icon" onclick="openNav()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<div class="content">
+  <div class="main-container">
+
+        <div class="container">
+          <p class="container-heading" id="heading1">Name</p>
+          <div>
+              <input
+              class="textarea"
+              type="text"
+              id="personName"
+              value="John Smith"
+              onclick="copyToClipboard('personName')"
+              />
+              <br /><br />
+              <button class="button-primary" onclick="generateName('personName')">
+              Generate
+              </button>
+          </div>
         </div>
 
-        <div class="content">
-
-          <div id="miscellaneous" class="tabcontent">
-
-              <div class="sub-container">
-
-                <div class="container">
-                  <p class="container-heading" id="heading1">Name</p>
-                  <div>
-                      <input
-                      class="textarea"
-                      type="text"
-                      id="personName"
-                      value="John Smith"
-                      onclick="copyToClipboard('personName')"
-                      />
-                      <br /><br />
-                      <button class="button-primary" onclick="generateName('personName')">
-                      Generate
-                      </button>
-                  </div>
-                </div>
-
-                <div class="container">
-                  <p class="container-heading" id="heading1">Matter Number</p>
-                  <div>
-                      <input
-                      class="textarea"
-                      type="text"
-                      id="generalMatterNumber"
-                      value="SMI01-01"
-                      onclick="copyToClipboard('generalMatterNumber')"
-                      />
-                      <br /><br />
-                      <button class="button-primary" onclick="generateMatterNumber('generalMatterNumber', 'personName')">
-                      Generate
-                      </button>
-                  </div>
-              </div>
-
-                <div class="container">
-                  <p class="container-heading">Password</p>
-                  <div>
-                      <input
-                      class="textarea"
-                      type="text"
-                      id="password"
-                      value="R4ND0M-Pa55W0rD"
-                      onclick="copyToClipboard('password')"
-                      />
-                      <br /><br />
-                      <button class="button-primary" onclick="generatePassword()">
-                      Generate
-                      </button>
-                  </div>
-                </div>
-
-                <div class="container">
-                  <p class="container-heading" id="heading">Number</p>
-                  <div>
-                      <input class="textarea" type="text" id="number" value="0" onclick="copyToClipboard('number')" />
-                      <br /><br />
-                      <button
-                      class="button-primary"
-                      onclick="generateRandomNumber('number')"
-                      >
-                      Generate
-                      </button>
-                  </div>
-                </div>
-
-                <div class="container">
-                  <p class="container-heading" id="heading">Mobile Number</p>
-                  <div>
-                      <input class="textarea" type="text" id="mobile" value="0" onclick="copyToClipboard('mobile')" />
-                      <br /><br />
-                      <button
-                      class="button-primary"
-                      onclick="generateMobile()"
-                      >
-                      Generate
-                      </button>
-                  </div>
-                </div>
-
-                <div class="container">
-                  <p class="container-heading" id="heading">Address</p>
-                  <div>
-                      <input class="textarea" type="text" id="address" value="0" onclick="copyToClipboard('address')" />
-                      <br /><br />
-                      <button
-                      class="button-primary"
-                      onclick="generateAddress()"
-                      >
-                      Generate
-                      </button>
-                  </div>
-                </div>
-
-                <div class="container">
-                  <p class="container-heading" id="heading9">Sort Code</p>
-                  <div>
-                      <input
-                      class="textarea"
-                      type="text"
-                      id="clientPaymentSortCode"
-                      value="00-00-00"
-                      onclick="copyToClipboard('clientPaymentSortCode')"
-                      />
-                      <br /><br />
-                      <button class="button-primary" onclick="generateSortCode('clientPaymentSortCode')">
-                      Generate
-                      </button>
-                  </div>
-              </div>
-
-              <div class="container">
-                  <p class="container-heading" id="heading8">Account Number</p>
-                  <div>
-                      <input
-                      class="textarea"
-                      type="text"
-                      id="clientPaymentAccountNumber"
-                      value="0000 0000"
-                      onclick="copyToClipboard('clientPaymentAccountNumber')"
-                      />
-                      <br /><br />
-                      <button
-                      class="button-primary"
-                      onclick="generateAccountNumber('clientPaymentAccountNumber')"
-                      >
-                      Generate
-                      </button>
-                  </div>
-              </div>
-
-                <div class="container">
-                  <p class="container-heading" id="heading">Word</p>
-                  <div>
-                      <input class="textarea" type="text" id="word" value="word" onclick="copyToClipboard('word')" />
-                      <br /><br />
-                      <button
-                      class="button-primary"
-                      onclick="generateWord()"
-                      >
-                      Generate
-                      </button>
-                  </div>
-                </div>
-
-                <div class="container">
-                  <p class="container-heading" id="heading">Noun</p>
-                  <div>
-                      <input class="textarea" type="text" id="noun" value="noun" onclick="copyToClipboard('noun')" />
-                      <br /><br />
-                      <button
-                      class="button-primary"
-                      onclick="generateNoun()"
-                      >
-                      Generate
-                      </button>
-                  </div>
-                </div>
-
-                <div class="container">
-                  <p class="container-heading" id="heading">Verb</p>
-                  <div>
-                      <input class="textarea" type="text" id="verb" value="verb" onclick="copyToClipboard('verb')" />
-                      <br /><br />
-                      <button
-                      class="button-primary"
-                      onclick="generateVerb()"
-                      >
-                      Generate
-                      </button>
-                  </div>
-                </div>
-
-                <div class="container">
-                  <p class="container-heading" id="heading">Adjective</p>
-                  <div>
-                      <input class="textarea" type="text" id="adjective" value="adjective" onclick="copyToClipboard('adjective')" />
-                      <br /><br />
-                      <button
-                      class="button-primary"
-                      onclick="generateAdjective()"
-                      >
-                      Generate
-                      </button>
-                  </div>
-                </div>
-
-              </div>
-
+        <div class="container">
+          <p class="container-heading" id="heading1">Matter Number</p>
+          <div>
+              <input
+              class="textarea"
+              type="text"
+              id="generalMatterNumber"
+              value="SMI01-01"
+              onclick="copyToClipboard('generalMatterNumber')"
+              />
+              <br /><br />
+              <button class="button-primary" onclick="generateMatterNumber('generalMatterNumber', 'personName')">
+              Generate
+              </button>
           </div>
-
-          <div id="custom" class="tabcontent">
-            <div class="container">
-              <p class="container-heading" id="heading1">Name</p>
-              <div>
-                  <input
-                  class="textarea"
-                  type="text"
-                  id="customName"
-                  value="John Smith"
-                  onclick="copyToClipboard('customName')"
-                  />
-                  <br /><br />
-                  <button class="button-primary" onclick="generateName('customName')">
-                  Generate
-                  </button>
-              </div>
-            </div>
-          </div>
-
-          <div id="clientPayment" class="tabcontent">
-
-              <div class="sub-container">
-                <div class="container">
-                    <p class="container-heading" id="heading1">Name</p>
-                    <div>
-                        <input
-                        class="textarea"
-                        type="text"
-                        id="clientPaymentName"
-                        value="John Smith"
-                        onclick="copyToClipboard('clientPaymentName')"
-                        />
-                        <br /><br />
-                        <button class="button-primary" onclick="generateName('clientPaymentName')">
-                        Generate
-                        </button>
-                    </div>
-                </div>
-
-                <div class="container">
-                    <p class="container-heading" id="heading1">Matter Number</p>
-                    <div>
-                        <input
-                        class="textarea"
-                        type="text"
-                        id="clientPaymentMatterNumber"
-                        value="SMI01-01"
-                        onclick="copyToClipboard('clientPaymentMatterNumber')"
-                        />
-                        <br /><br />
-                        <button class="button-primary" onclick="generateMatterNumber('clientPaymentMatterNumber', 'clientPaymentName')">
-                        Generate
-                        </button>
-                    </div>
-                </div>
-
-
-                <div class="container">
-                    <p class="container-heading" id="heading2">Description</p>
-                    <div>
-                        <input
-                        class="textarea"
-                        type="text"
-                        id="clientPaymentDescription"
-                        value="General"
-                        onclick="copyToClipboard('clientPaymentDescription')"
-                        />
-                        <br /><br />
-                        <button class="button-primary" onclick="generateWorkType('clientPaymentDescription')">
-                        Generate
-                        </button>
-                    </div>
-                </div>
-
-                <div class="container">
-                    <p class="container-heading" id="heading7">Amount</p>
-                    <div>
-                        <input class="textarea" type="text" id="clientPaymentAmount" value="-" onclick="copyToClipboard('clientPaymentAmount')" />
-                        <br /><br />
-                        <button
-                        class="button-primary"
-                        onclick="generateRandomNumber('clientPaymentAmount')"
-                        >
-                        Generate
-                        </button>
-                    </div>
-                </div>
-
-                <div class="container">
-                    <p class="container-heading" id="heading7">Payment Type</p>
-                    <div>
-                        <input class="textarea" type="text" id="paymentType" value="-" onclick="copyToClipboard('paymentType')" />
-                        <br /><br />
-                        <button
-                        class="button-primary"
-                        onclick="generatePaymentType('paymentType')"
-                        >
-                        Generate
-                        </button>
-                    </div>
-                </div>
-
-                <div class="container">
-                    <p class="container-heading" id="heading6">Payee</p>
-                    <div>
-                        <input
-                        class="textarea"
-                        type="text"
-                        id="clientPaymentFrom"
-                        value="Example Bank"
-                        onclick="copyToClipboard('clientPaymentFrom')"
-                        />
-                        <br /><br />
-                        <button class="button-primary" onclick="generateBank('clientPaymentFrom')">
-                        Generate
-                        </button>
-                    </div>
-                </div>
-
-                <div class="container">
-                    <p class="container-heading" id="heading9">Sort Code</p>
-                    <div>
-                        <input
-                        class="textarea"
-                        type="text"
-                        id="sortCode"
-                        value="00-00-00"
-                        onclick="copyToClipboard('sortCode')"
-                        />
-                        <br /><br />
-                        <button class="button-primary" onclick="generateSortCode('sortCode')">
-                        Generate
-                        </button>
-                    </div>
-                </div>
-
-                <div class="container">
-                    <p class="container-heading" id="heading8">Account Number</p>
-                    <div>
-                        <input
-                        class="textarea"
-                        type="text"
-                        id="accountNumber"
-                        value="0000 0000"
-                        onclick="copyToClipboard('accountNumber')"
-                        />
-                        <br /><br />
-                        <button
-                        class="button-primary"
-                        onclick="generateAccountNumber('accountNumber')"
-                        >
-                        Generate
-                        </button>
-                    </div>
-                </div>
-
-              </div>
-
-          </div>
-
-          <div id="clientReceipt" class="tabcontent">
-
-                <div class="sub-container">
-                    <div class="container">
-                    <p class="container-heading" id="heading1">Name</p>
-                    <div>
-                        <input
-                            class="textarea"
-                            type="text"
-                            id="clientReceiptName"
-                            value="John Smith"
-                            onclick="copyToClipboard('clientReceiptName')"
-                        />
-                        <br /><br />
-                        <button class="button-primary" onclick="generateName('clientReceiptName')">
-                            Generate
-                        </button>
-                    </div>
-                </div>
-
-                <div class="container">
-                    <p class="container-heading" id="heading1">Matter Number</p>
-                    <div>
-                        <input
-                            class="textarea"
-                            type="text"
-                            id="clientReceiptMatterNumber"
-                            value="SMI01-01"
-                            onclick="copyToClipboard('clientReceiptMatterNumber')"
-                        />
-                        <br /><br />
-                        <button class="button-primary" onclick="generateMatterNumber('clientReceiptMatterNumber', 'clientReceiptName')">
-                            Generate
-                        </button>
-                    </div>
-                </div>
-
-
-                <div class="container">
-                    <p class="container-heading" id="heading2">Description</p>
-                    <div>
-                        <input
-                            class="textarea"
-                            type="text"
-                            id="clientReceiptDescription"
-                            value="General"
-                            onclick="copyToClipboard('clientReceiptDescription')"
-                        />
-                        <br /><br />
-                        <button class="button-primary" onclick="generateWorkType('clientReceiptDescription')">
-                            Generate
-                        </button>
-                    </div>
-                </div>
-
-                <div class="container">
-                    <p class="container-heading" id="heading7">Amount</p>
-                    <div>
-                        <input class="textarea" type="text" id="clientReceiptAmount" value="-" />
-                        <br /><br />
-                        <button
-                            class="button-primary"
-                            onclick="generateRandomNumber('clientReceiptAmount')"
-                            onclick="copyToClipboard('clientReceiptAmount')"
-                        >
-                            Generate
-                        </button>
-                    </div>
-                </div>
-
-                <div class="container">
-                    <p class="container-heading" id="heading6">Funds Received from</p>
-                    <div>
-                        <input
-                            class="textarea"
-                            type="text"
-                            id="clientReceiptFrom"
-                            value="Example Bank"
-                            onclick="copyToClipboard('clientReceiptFrom')"
-                        />
-                        <br /><br />
-                        <button class="button-primary" onclick="generateBank('clientReceiptFrom')">
-                            Generate
-                        </button>
-                    </div>
-                </div>
-                </div>
-
-          </div>
-
-          <div id="transfer" class="tabcontent">
-                <div class="sub-container">
-      
-                    <div class="container" id="container-transfer-name">
-                      <p class="container-heading" id="heading1">Name</p>
-                      <div>
-                        <input
-                          class="textarea"
-                          type="text"
-                          id="transferName"
-                          value="John Smith"
-                          onclick="copyToClipboard('transferName')"
-                        />
-                        <br /><br />
-                        <button class="button-primary" onclick="generateName('transferName')">
-                          Generate
-                        </button>
-                      </div>
-                    </div>
-      
-                    <div class="container" id="container-transfer-matternumber">
-                      <p class="container-heading" id="heading1">Matter Number</p>
-                      <div>
-                        <input
-                          class="textarea"
-                          type="text"
-                          id="transferMatterNumber"
-                          value="SMI01-01"
-                          onclick="copyToClipboard('transferMatterNumber')"
-                        />
-                        <br /><br />
-                        <button class="button-primary" 
-                        onclick="generateMatterNumber('transferMatterNumber', 'transferName')">
-                          Generate
-                        </button>
-                      </div>
-                    </div>
-      
-      
-                    <div class="container" id="container-transfer-description">
-                      <p class="container-heading" id="heading2">Description</p>
-                      <div>
-                        <input
-                          class="textarea"
-                          type="text"
-                          id="transferDescription"
-                          value="General"
-                          onclick="copyToClipboard('transferDescription')"
-                        />
-                        <br /><br />
-                        <button class="button-primary" onclick="generateWorkType('transferDescription')">
-                          Generate
-                        </button>
-                      </div>
-                    </div>
-      
-                    <div class="container" id="container-transfer-amount">
-                      <p class="container-heading" id="heading7">Amount</p>
-                      <div>
-                        <input class="textarea" type="text" id="transferAmount" value="123.45" onclick="copyToClipboard('transferAmount')" />
-                        <br /><br />
-                        <button
-                          class="button-primary"
-                          onclick="generateRandomNumber('transferAmount')"
-                        >
-                          Generate
-                        </button>
-                      </div>
-                    </div>
-      
-                </div>
-          </div>
-
-          <div id="thirdPartyCheque" class="tabcontent">
-                <div class="sub-container">
-      
-                    <div class="container" id="container1">
-                      <p class="container-heading" id="heading1">Name</p>
-                      <div>
-                        <input
-                          class="textarea"
-                          type="text"
-                          id="thirdPartyChequeName"
-                          value="John Smith"
-                          onclick="copyToClipboard('thirdPartyChequeName')"
-                        />
-                        <br /><br />
-                        <button class="button-primary" onclick="generateName('thirdPartyChequeName')">
-                          Generate
-                        </button>
-                      </div>
-                    </div>
-      
-                    <div class="container" id="container1">
-                      <p class="container-heading" id="heading1">Matter Number</p>
-                      <div>
-                        <input
-                          class="textarea"
-                          type="text"
-                          id="thirdPartyChequeMatterNumber"
-                          value="SMI01-01"
-                          onclick="copyToClipboard('thirdPartyChequeMatterNumber')"
-                        />
-                        <br /><br />
-                        <button class="button-primary" onclick="generateMatterNumber('thirdPartyChequeMatterNumber', 'ThirdPartyChequeName')">
-                          Generate
-                        </button>
-                      </div>
-                    </div>
-      
-      
-                    <div class="container" id="container2">
-                      <p class="container-heading" id="heading2">Description</p>
-                      <div>
-                        <input
-                          class="textarea"
-                          type="text"
-                          id="thirdPartyChequeDescription"
-                          value="General"
-                          onclick="copyToClipboard('thirdPartyChequeDescription')"
-                        />
-                        <br /><br />
-                        <button class="button-primary" onclick="generateWorkType('thirdPartyChequeDescription')">
-                          Generate
-                      </div>
-                    </div>
-      
-                    <div class="container" id="container9">
-                      <p class="container-heading" id="heading7">Amount</p>
-                      <div>
-                        <input class="textarea" type="text" id="thirdPartyChequeAmount" value="-" />
-                        <br /><br />
-                        <button
-                          class="button-primary"
-                          onclick="generateRandomNumber('thirdPartyChequeAmount')"
-                          onclick="copyToClipboard('thirdPartyChequeAmount')"
-                        >
-                          Generate
-                        </button>
-                      </div>
-                    </div>
-      
-                    <div class="container" id="container6">
-                      <p class="container-heading" id="heading6">Funds Received from</p>
-                      <div>
-                        <input
-                          class="textarea"
-                          type="text"
-                          id="thirdPartyChequeFrom"
-                          value="Example Bank"
-                          onclick="copyToClipboard('thirdPartyChequeFrom')"
-                        />
-                        <br /><br />
-                        <button class="button-primary" onclick="generateBank('thirdPartyChequeFrom')">
-                          Generate
-                        </button>
-                      </div>
-                    </div>
-      
-                </div>
-          </div>
-
-          <div id="writeOff" class="tabcontent">
-            <div class="sub-container">
-  
-                <div class="container" id="container1">
-                  <p class="container-heading" id="heading1">Name</p>
-                  <div>
-                    <input
-                      class="textarea"
-                      type="text"
-                      id="writeOffName"
-                      value="John Smith"
-                      onclick="copyToClipboard('writeOffName')"
-                    />
-                    <br /><br />
-                    <button class="button-primary" onclick="generateName('writeOffName')">
-                      Generate
-                    </button>
-                  </div>
-                </div>
-  
-                <div class="container" id="container1">
-                  <p class="container-heading" id="heading1">Matter Number</p>
-                  <div>
-                    <input
-                      class="textarea"
-                      type="text"
-                      id="writeOffMatterNumber"
-                      value="SMI01-01"
-                      onclick="copyToClipboard('writeOffMatterNumber')"
-                    />
-                    <br /><br />
-                    <button class="button-primary" onclick="generateMatterNumber('writeOffMatterNumber', 'writeOffName')">
-                      Generate
-                    </button>
-                  </div>
-                </div>
-  
-  
-                <div class="container" id="container2">
-                  <p class="container-heading" id="heading2">Description</p>
-                  <div>
-                    <input
-                      class="textarea"
-                      type="text"
-                      id="writeOffDescription"
-                      value="General"
-                      onclick="copyToClipboard('writeOffDescription')"
-                    />
-                    <br /><br />
-                    <button class="button-primary" onclick="generateWorkType('writeOffDescription')">
-                      Generate
-                  </div>
-                </div>
-  
-                <div class="container" id="container9">
-                  <p class="container-heading" id="heading7">Amount</p>
-                  <div>
-                    <input class="textarea" type="text" id="writeOffAmount" value="-" />
-                    <br /><br />
-                    <button
-                      class="button-primary"
-                      onclick="generateRandomNumber('writeOffAmount')"
-                      onclick="copyToClipboard('writeOffAmount')"
-                    >
-                      Generate
-                    </button>
-                  </div>
-                </div>
-  
-            </div>
       </div>
 
+      <div class="container">
+        <p class="container-heading" id="heading">Address</p>
+        <div>
+            <input class="textarea" type="text" id="address" value="0" onclick="copyToClipboard('address')" />
+            <br /><br />
+            <button
+            class="button-primary"
+            onclick="generateAddress()"
+            >
+            Generate
+            </button>
+        </div>
+      </div>
+
+        <div class="container">
+          <p class="container-heading">Password</p>
+          <div>
+              <input
+              class="textarea"
+              type="text"
+              id="password"
+              value="R4ND0M-Pa55W0rD"
+              onclick="copyToClipboard('password')"
+              />
+              <br /><br />
+              <button class="button-primary" onclick="generatePassword()">
+              Generate
+              </button>
+          </div>
         </div>
 
+        <div class="container">
+          <p class="container-heading" id="heading">Number</p>
+          <div>
+              <input class="textarea" type="text" id="number" value="0" onclick="copyToClipboard('number')" />
+              <br /><br />
+              <button
+              class="button-primary"
+              onclick="generateRandomNumber('number')"
+              >
+              Generate
+              </button>
+          </div>
+        </div>
+
+        <div class="container">
+          <p class="container-heading" id="heading">Mobile Number</p>
+          <div>
+              <input class="textarea" type="text" id="mobile" value="0" onclick="copyToClipboard('mobile')" />
+              <br /><br />
+              <button
+              class="button-primary"
+              onclick="generateMobile()"
+              >
+              Generate
+              </button>
+          </div>
+        </div>
+
+        <div class="container">
+          <p class="container-heading" id="heading9">Sort Code</p>
+          <div>
+              <input
+              class="textarea"
+              type="text"
+              id="clientPaymentSortCode"
+              value="00-00-00"
+              onclick="copyToClipboard('clientPaymentSortCode')"
+              />
+              <br /><br />
+              <button class="button-primary" onclick="generateSortCode('clientPaymentSortCode')">
+              Generate
+              </button>
+          </div>
+      </div>
+
+      <div class="container">
+          <p class="container-heading" id="heading8">Account Number</p>
+          <div>
+              <input
+              class="textarea"
+              type="text"
+              id="clientPaymentAccountNumber"
+              value="0000 0000"
+              onclick="copyToClipboard('clientPaymentAccountNumber')"
+              />
+              <br /><br />
+              <button
+              class="button-primary"
+              onclick="generateAccountNumber('clientPaymentAccountNumber')"
+              >
+              Generate
+              </button>
+          </div>
+      </div>
+
+        <div class="container">
+          <p class="container-heading" id="heading">Word</p>
+          <div>
+              <input class="textarea" type="text" id="word" value="word" onclick="copyToClipboard('word')" />
+              <br /><br />
+              <button
+              class="button-primary"
+              onclick="generateWord()"
+              >
+              Generate
+              </button>
+          </div>
+        </div>
+
+        <div class="container">
+          <p class="container-heading" id="heading">Noun</p>
+          <div>
+              <input class="textarea" type="text" id="noun" value="noun" onclick="copyToClipboard('noun')" />
+              <br /><br />
+              <button
+              class="button-primary"
+              onclick="generateNoun()"
+              >
+              Generate
+              </button>
+          </div>
+        </div>
+
+        <div class="container">
+          <p class="container-heading" id="heading">Verb</p>
+          <div>
+              <input class="textarea" type="text" id="verb" value="verb" onclick="copyToClipboard('verb')" />
+              <br /><br />
+              <button
+              class="button-primary"
+              onclick="generateVerb()"
+              >
+              Generate
+              </button>
+          </div>
+        </div>
+
+        <div class="container">
+          <p class="container-heading" id="heading">Adjective</p>
+          <div>
+              <input class="textarea" type="text" id="adjective" value="adjective" onclick="copyToClipboard('adjective')" />
+              <br /><br />
+              <button
+              class="button-primary"
+              onclick="generateAdjective()"
+              >
+              Generate
+              </button>
+          </div>
+        </div>
+
+        <div class="container">
+          <p class="container-heading" id="heading">Description</p>
+          <div>
+              <input
+              class="textarea"
+              type="text"
+              id="clientPaymentDescription"
+              value="General"
+              onclick="copyToClipboard('clientPaymentDescription')"
+              />
+              <br /><br />
+              <button class="button-primary" onclick="generateWorkType('clientPaymentDescription')">
+              Generate
+              </button>
+          </div>
+      </div>
+
+      <div class="container">
+        <p class="container-heading" id="heading">Payee</p>
+        <div>
+            <input
+            class="textarea"
+            type="text"
+            id="clientPaymentFrom"
+            value="Example Bank"
+            onclick="copyToClipboard('clientPaymentFrom')"
+            />
+            <br /><br />
+            <button class="button-primary" onclick="generateBank('clientPaymentFrom')">
+            Generate
+            </button>
+        </div>
     </div>
-    <script src="scripts.js"></script>
-    <script src="words.js"></script>
+
+    <div class="container">
+      <p class="container-heading" id="heading7">Payment Type</p>
+      <div>
+          <input class="textarea" type="text" id="paymentType" value="-" onclick="copyToClipboard('paymentType')" />
+          <br /><br />
+          <button
+          class="button-primary"
+          onclick="generatePaymentType('paymentType')"
+          >
+          Generate
+          </button>
+      </div>
+  </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
