@@ -1055,6 +1055,11 @@ function generateMobile() {
   document.getElementById("mobile").value = mobileNumber;
 }
 
+function generateTelephone() {
+  const telephoneNumber = "01632 960" + generateNumber(3);
+  document.getElementById("telephone").value = telephoneNumber;
+}
+
 //! Generate sort code
 
 // function generateSortCode() {
