@@ -952,11 +952,9 @@ function getTown(towns) {
   return Math.floor(Math.random() * towns1.length);
 }
 
-// Onlick function
+// Generate UK address
 function generateAddress() {
-
   const uk_cities = ["Bath", "Birmingham", "Bradford", "Brighton & Hove", "Bristol", "Cambridge", "Canterbury", "Carlisle", "Chelmsford", "Chester", "Chichester", "Colchester", "Coventry", "Derby", "Doncaster", "Durham", "Ely", "Exeter", "Gloucester", "Hereford", "Kingston-upon-Hull", "Lancaster", "Leeds", "Leicester", "Lichfield", "Lincoln", "Liverpool", "London", "Manchester", "Milton Keynes", "Newcastle-upon-Tyne", "Norwich", "Nottingham", "Oxford", "Peterborough", "Plymouth", "Portsmouth", "Preston", "Ripon", "Salford", "Salisbury", "Sheffield", "Southampton", "Southend-on-Sea", "St Albans", "Stoke on Trent", "Sunderland", "Truro", "Wakefield", "Wells", "Westminster", "Winchester", "Wolverhampton", "Worcester", "York", "Armagh", "Bangor", "Belfast", "Lisburn", "Londonderry", "Newry", "Aberdeen", "Dundee", "Dunfermline", "Edinburgh", "Glasgow", "Inverness", "Perth", "Stirling", "Bangor", "Cardiff", "Newport", "St Asaph", "St Davids", "Swansea", "Wrexham"]
-
 
   const streetNames = [
     "Road",
@@ -967,6 +965,7 @@ function generateAddress() {
     "Grove",
     "Crescent",
   ];
+
   const streetPrefix = [
     "Oak",
     "Birch",
@@ -1018,8 +1017,17 @@ function generateAddress() {
     " " +
     generatedPostcode3 +
     generatedPostcode4;
-  document.getElementById("address").value =
-    generatedNumber +
+  // document.getElementById("address").value =
+    // generatedNumber +
+    // " " +
+    // streetPrefix[generatedStreetPrefix] +
+    // " " +
+    // streetNames[generatedStreetName] +
+    // ", " +
+    // uk_cities[generatedCity] +
+    // ", " +
+    // fullPostcode;
+    const address = generatedNumber +
     " " +
     streetPrefix[generatedStreetPrefix] +
     " " +
@@ -1028,6 +1036,11 @@ function generateAddress() {
     uk_cities[generatedCity] +
     ", " +
     fullPostcode;
+    return address
+}
+
+function populateAddress() {
+  document.getElementById("address").value = generateAddress();
 }
 
 //! Payment type
@@ -1491,10 +1504,8 @@ function generateWorkType(selectorId) {
     "Buy to Let",
     "New Build Purchase",
     "New Build Sale",
-    "Purchase",
     "Registration",
     "Remortgage",
-    "Sale",
     "Tenancy",
     "Transfer",
     "High Court",
@@ -1552,6 +1563,9 @@ function generateWorkType(selectorId) {
     "Trusts",
     "Wills",
     "Wills & Power of Attorney",
+    `Purchase of ${generateAddress()}`,
+    `Sale of ${generateAddress()}`,
+    `Lease of ${generateAddress()}`,
   ];
   let getworkType = Math.floor(Math.random() * workType.length);
   let generatedworkType = workType[getworkType];
