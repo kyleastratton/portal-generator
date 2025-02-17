@@ -1017,16 +1017,7 @@ function generateAddress() {
     " " +
     generatedPostcode3 +
     generatedPostcode4;
-  // document.getElementById("address").value =
-    // generatedNumber +
-    // " " +
-    // streetPrefix[generatedStreetPrefix] +
-    // " " +
-    // streetNames[generatedStreetName] +
-    // ", " +
-    // uk_cities[generatedCity] +
-    // ", " +
-    // fullPostcode;
+
     const address = generatedNumber +
     " " +
     streetPrefix[generatedStreetPrefix] +
@@ -1044,7 +1035,6 @@ function populateAddress() {
 }
 
 //! Payment type
-
 function generatePaymentType(selectorId) {
   const paymentTypes = [
     "Cheque",
@@ -1069,7 +1059,7 @@ function generateMobile() {
 }
 
 function generateTelephone() {
-  const telephoneNumber = "01632 960" + generateNumber(3);
+  const telephoneNumber = "01632 960 " + generateNumber(3);
   document.getElementById("telephone").value = telephoneNumber;
 }
 
