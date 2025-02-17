@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="styles.css">
+<title>KAS</title>
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+  <a href="./index.html">All</a>
+  <a href="./matter.html">Matter</a>
+  <a href="./person.html">Person</a>
+  <a href="./miscellaneous.html" class="active">Miscellaneous</a>
+  <a href="javascript:void(0);" class="icon" onclick="openNav()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<div class="content">
+  <div class="main-container">
+
+    <div class="container">
+      <p class="container-heading">Password</p>
+      <div>
+          <input
+          class="textarea"
+          type="text"
+          id="password"
+          value="R4ND0M-Pa55W0rD"
+          onclick="copyToClipboard('password')"
+          />
+          <br /><br />
+          <button class="button-primary" onclick="generatePassword()">
+          Generate
+          </button>
+      </div>
+    </div>
+
+    <div class="container">
+      <p class="container-heading" id="heading">Number</p>
+      <div>
+          <input class="textarea" type="text" id="number" value="0" onclick="copyToClipboard('number')" />
+          <br /><br />
+          <button
+          class="button-primary"
+          onclick="generateRandomNumber('number')"
+          >
+          Generate
+          </button>
+      </div>
+    </div>
+
+    <div class="container">
+      <p class="container-heading" id="heading">Word</p>
+      <div>
+          <input class="textarea" type="text" id="word" value="word" onclick="copyToClipboard('word')" />
+          <br /><br />
+          <button
+          class="button-primary"
+          onclick="generateWord()"
+          >
+          Generate
+          </button>
+      </div>
+    </div>
+
+    <div class="container">
+      <p class="container-heading" id="heading">Noun</p>
+      <div>
+          <input class="textarea" type="text" id="noun" value="noun" onclick="copyToClipboard('noun')" />
+          <br /><br />
+          <button
+          class="button-primary"
+          onclick="generateNoun()"
+          >
+          Generate
+          </button>
+      </div>
+    </div>
+
+    <div class="container">
+      <p class="container-heading" id="heading">Verb</p>
+      <div>
+          <input class="textarea" type="text" id="verb" value="verb" onclick="copyToClipboard('verb')" />
+          <br /><br />
+          <button
+          class="button-primary"
+          onclick="generateVerb()"
+          >
+          Generate
+          </button>
+      </div>
+    </div>
+
+    <div class="container">
+      <p class="container-heading" id="heading">Adjective</p>
+      <div>
+          <input class="textarea" type="text" id="adjective" value="adjective" onclick="copyToClipboard('adjective')" />
+          <br /><br />
+          <button
+          class="button-primary"
+          onclick="generateAdjective()"
+          >
+          Generate
+          </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="scripts.js"></script>
+
+</body>
+</html>
