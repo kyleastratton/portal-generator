@@ -4,13 +4,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="styles.css">
+<title>KAS - Matter</title>
 </head>
 <body>
 
 <div class="topnav" id="myTopnav">
   <a href="./index.html">All</a>
   <a href="./matter.html" class="active">Matter</a>
-  <a href="#contact">Person</a>
+  <a href="./person.html">Person</a>
   <a href="#about">Miscellaneous</a>
   <a href="javascript:void(0);" class="icon" onclick="openNav()">
     <i class="fa fa-bars"></i>
@@ -21,69 +22,69 @@
   <div class="main-container">
 
         <div class="container">
-          <p class="container-heading" id="heading1">Name</p>
-          <div>
-              <input
-              class="textarea"
-              type="text"
-              id="personName"
-              value="John Smith"
-              onclick="copyToClipboard('personName')"
-              />
-              <br /><br />
-              <button class="button-primary" onclick="generateName('personName')">
-              Generate
-              </button>
-          </div>
+            <p class="container-heading" id="heading1">Name</p>
+            <div>
+                <input
+                class="textarea"
+                type="text"
+                id="personName"
+                value="John Smith"
+                onclick="copyToClipboard('personName')"
+                />
+                <br /><br />
+                <button class="button-primary" onclick="generateName('personName')">
+                Generate
+                </button>
+            </div>
         </div>
 
         <div class="container">
-          <p class="container-heading" id="heading1">Matter Number</p>
-          <div>
-              <input
-              class="textarea"
-              type="text"
-              id="generalMatterNumber"
-              value="SMI01-01"
-              onclick="copyToClipboard('generalMatterNumber')"
-              />
-              <br /><br />
-              <button class="button-primary" onclick="generateMatterNumber('generalMatterNumber', 'personName')">
-              Generate
-              </button>
-          </div>
-      </div>
-
-      <div class="container">
-        <p class="container-heading" id="heading">Description</p>
-        <div>
-            <input
-            class="textarea"
-            type="text"
-            id="clientPaymentDescription"
-            value="General"
-            onclick="copyToClipboard('clientPaymentDescription')"
-            />
-            <br /><br />
-            <button class="button-primary" onclick="generateWorkType('clientPaymentDescription')">
-            Generate
-            </button>
+            <p class="container-heading" id="heading1">Matter Number</p>
+            <div>
+                <input
+                class="textarea"
+                type="text"
+                id="generalMatterNumber"
+                value="SMI01-01"
+                onclick="copyToClipboard('generalMatterNumber')"
+                />
+                <br /><br />
+                <button class="button-primary" onclick="generateMatterNumber('generalMatterNumber', 'personName')">
+                Generate
+                </button>
+            </div>
         </div>
-     </div>
 
-      <div class="container">
-        <p class="container-heading" id="heading">Address</p>
-        <div>
-            <input class="textarea" type="text" id="address" value="0" onclick="copyToClipboard('address')" />
-            <br /><br />
-            <button
-            class="button-primary"
-            onclick="generateAddress()"
-            >
-            Generate
-            </button>
+        <div class="container">
+            <p class="container-heading" id="heading">Description</p>
+            <div>
+                <input
+                class="textarea"
+                type="text"
+                id="clientPaymentDescription"
+                value="General"
+                onclick="copyToClipboard('clientPaymentDescription')"
+                />
+                <br /><br />
+                <button class="button-primary" onclick="generateWorkType('clientPaymentDescription')">
+                Generate
+                </button>
+            </div>
         </div>
-      </div>
+
+        <div class="container">
+            <p class="container-heading" id="heading">Address</p>
+            <div>
+                <input class="textarea" type="text" id="address" value="0" onclick="copyToClipboard('address')" />
+                <br /><br />
+                <button
+                class="button-primary"
+                onclick="generateAddress()"
+                >
+                Generate
+                </button>
+            </div>
+        </div>
 
         <div class="container">
           <p class="container-heading" id="heading">Mobile Number</p>
