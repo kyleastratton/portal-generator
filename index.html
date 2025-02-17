@@ -54,6 +54,23 @@
           </button>
       </div>
     </div>
+    
+    <div class="container">
+      <p class="container-heading" id="heading">Description</p>
+      <div>
+          <input
+          class="textarea"
+          type="text"
+          id="clientPaymentDescription"
+          value="General"
+          onclick="copyToClipboard('clientPaymentDescription')"
+          />
+          <br /><br />
+          <button class="button-primary" onclick="generateWorkType('clientPaymentDescription')">
+          Generate
+          </button>
+      </div>
+    </div>
 
     <div class="container">
       <p class="container-heading" id="heading">Address</p>
@@ -216,23 +233,6 @@
           class="button-primary"
           onclick="generateAdjective()"
           >
-          Generate
-          </button>
-      </div>
-    </div>
-
-    <div class="container">
-      <p class="container-heading" id="heading">Description</p>
-      <div>
-          <input
-          class="textarea"
-          type="text"
-          id="clientPaymentDescription"
-          value="General"
-          onclick="copyToClipboard('clientPaymentDescription')"
-          />
-          <br /><br />
-          <button class="button-primary" onclick="generateWorkType('clientPaymentDescription')">
           Generate
           </button>
       </div>
